@@ -24,7 +24,7 @@ module.exports = {
     //     // '/@components/': path.resolve(__dirname, './src/components')
     //   },
     optimizeDeps: {
-        include: ["echarts", "axios", "mockjs"]
+        include: ["echarts", "axios", "mockjs","@ant-design/colors"]
     },
     alias: {
         '/@/': path.resolve(__dirname, './src'),
@@ -57,6 +57,20 @@ module.exports = {
      * @default 'dist'
      */
     outDir: process.env.VITE_OUTPUT_DIR,
+    css: {
+        loaderOptions: {
+            less: {
+                lessOptions: {
+                    modifyVars: {
+                        'primary-color': '#1DA57A',
+                        'link-color': '#1DA57A',
+                        'border-radius-base': '2px',
+                    },
+                    javascriptEnabled: true,
+                },
+            },
+        },
+    },
     // 反向代理
     proxy: {
         '/ajax': {

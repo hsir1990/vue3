@@ -1,101 +1,63 @@
 <template>
-    <div id="header">header
-         <!--不清楚为啥放在句首就不能使用-->
-        <!-- {{ this.$store.state.count }} -->
-        {{ countss }}
-       
-        {{ this.$store.state.count }}
-        
-        {{ this.$store.getters.getCount }}
-        <button @click="add">+</button>
-        <button @click="del">-</button>
-    </div>
+        <a-layout-header class="header">
+            <div class="logo" />
+            <a-menu
+                theme="dark"
+                mode="horizontal"
+                v-model:selectedKeys="selectedKeys1"
+                :style="{ lineHeight: '64px' }"
+            >
+                <a-menu-item key="1" @click="Jlayout"> mian  </a-menu-item>
+                <a-menu-item key="2" @click="J404"> 404   </a-menu-item>
+                <a-menu-item key="3" @click="Jlogin"> login </a-menu-item>
+            </a-menu>
+        </a-layout-header>
+    
 </template>
 
 <style lang="less" scoped>
-#header{
-    font-size: 30px;
-    color: aqua;
-    // background-color: #ff0;
-    width: 100%;
-    height: 80px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-bottom: 1px solid #ccc;
+// #header{
+//     font-size: 30px;
+//     color: aqua;
+//     // background-color: #ff0;
+//     width: 100%;
+//     height: 80px;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     border-bottom: 1px solid #ccc;
+// }
+#components-layout-demo-top-side-2 .logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px 28px 16px 0;
+    float: left;
 }
 </style>
 <script>
-import {mapState, mapGetters, mapActions} from "vuex"
 export default {
-    name: "header",
-    props: {
-        msg: String,
-    },
-    // data() {
-    //     return{
-    //         sss:this.$store.state.count
-    //     }
-        
-    // },
-    data() {
-        // function aa() {
-        //     // debugger
-        //     // alert(11)
-        // }
-        // aa();
-        return {
-            countss: this.$store.state.count,
-            // cats: [{
-            //         name: "cat1",
-            //         age: 11,
-            //     },
-            //     {
-            //         name: "cat2",
-            //         age: 22,
-            //     },
-            //     {
-            //         name: "cat3",
-            //         age: 33,
-            //     },
-            // ],
-        };
-    },
-    methods:{
-        add(){
-            //mutation
-            // this.$store.commit('addCount',1)
-            //Actions 
-            this.$store.dispatch('getAddCount',1)
-        },
-        del(){
-            //mutation
-            // this.$store.commit('delCount',1)
-            //Actions 
-            this.$store.dispatch('getDelCount',1)
-        },
-        sss(){
-            console.log(`1111111-----this.$store.state.count`+this.$store.state.count)
-        },
-        
-    },
-    created(){
-            // 获取tree结构
-            this.sss()
-            
-        },
-    computed:{
-        
-        //通过配合 ... 拓展符号
-        ...mapState({
-            count1:state=>state.count
-        }),
-        ...mapGetters([
-            'getCount',
-            'isShow'
-        ]),
-    }
+  components: {
 
-
+  },
+  data() {
+    return {
+      selectedKeys1: ['1'],
+      selectedKeys2: ['1'],
+      collapsed: false,
+      openKeys: ['sub1'],
+    };
+  },
+  methods:{
+        Jlayout() {
+            this.$router.push("/layout");
+        },
+        J404() {
+            this.$router.push("/404");
+        },
+        Jlogin() {
+            this.$router.push("/login");
+        },
+  }
 };
 </script>

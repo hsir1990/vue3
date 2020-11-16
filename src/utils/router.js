@@ -1,16 +1,6 @@
-// // import VueRouter from 'vue-router'
-// import {createRouter, createWebHashHistory} from 'vue-router'
-// const routes = []
-// // Vue-router新版本中，需要使用createRouter来创建路由
-// export default  createRouter({
-//   // 指定路由的模式,此处使用的是hash模式
-//   history: createWebHashHistory(),
-//   routes // short for `routes: routes`
-// })
-
-
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Layout from '/@/pages/layout.vue'
+import store from './store'
 
 export const constantRoutes = [
    
@@ -37,9 +27,9 @@ export const constantRoutes = [
         component: () => import('/@/pages/layout.vue'),
         hidden: true,
         children: [
-            { path: '/layout/btn1', component: () => import('/@/pages/views/Btn1.vue') },
-            { path: '/layout/btn2', component: () => import('/@/pages/views/Btn2.vue') },
-            { path: '/layout/btn3', component: () => import('/@/pages/views/Btn3.vue') }
+            { path: '/layout/echart', component: () => import('/@/pages/views/Echartpage.vue') },
+            { path: '/layout/mock', component: () => import('/@/pages/views/Mock.vue') },
+            { path: '/layout/vuex', component: () => import('/@/pages/views/Vuex.vue') }
         ]
 
     },
@@ -55,17 +45,6 @@ export const constantRoutes = [
         // hidden: true
         name: 'notFound',
     }
-    // {
-    //     path: '*',
-    //     redirect: '/login',
-    //     // hidden: true
-    //     name: 'notFound',
-    // },
-    // {
-    //     path: '/*',
-    //     redirect: '/404',
-    //     // hidden: true,
-    // },
 ]
 export const asyncRoutes = [
     {
@@ -211,5 +190,8 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes: constantRoutes,
 })
-
+router.beforeEach((to, from) => {
+  console.log(to.name,'-----------------------------')
+    return true
+  })
 export default router

@@ -7,7 +7,8 @@ export default createStore({
     state:{ //要设置的全局访问的state对象
         //要设置的初始化属性
         count:1,
-        ChangeShowCom:true
+        ChangeShowCom:true,
+        userPage:''//路由的访问
     },
     getters:{//实时监听state值的变化（最新状态）
         getCount(state){ //承载变化的count值
@@ -20,7 +21,7 @@ export default createStore({
 
     mutations:{
         addCount(state,num){//这里面参数除了state之外还传了需要增加的值num
-            state.count = state.count+num
+            state.count = state.count+Unum
         },
         delCount(state,num){
             //count 到 0就不能减少了
@@ -41,6 +42,9 @@ export default createStore({
         getAddCount(context, num){
             context.commit('addCount', num)
         },
+        // getUserPage(context, userPage){
+        //     context.commit('userPage', userPage)
+        // },
         getDelCount(context, num){
             context.commit('delCount', num)
         },

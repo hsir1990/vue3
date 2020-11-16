@@ -1,8 +1,9 @@
 <template>
     <!-- <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Hello Vue 3.0 + Vite" /> -->
-    <router-view />
-    
+    <a-config-provider :locale="locale">
+        <router-view />
+    </a-config-provider>
     <!-- <div id="app"></div> -->
 </template>
 
@@ -17,4 +18,12 @@
 //         // Login
 //     }
 // };
+import zhCN from 'ant-design-vue/es/locale/zh_CN';
+export default {
+    data() {
+      return {
+        locale: zhCN,
+      };
+    },
+  };
 </script>
