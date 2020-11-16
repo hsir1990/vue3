@@ -16,7 +16,14 @@ import '../mock/mockServer'
 // if (process.env.NODE_ENV === 'development') {
 //     // require('../mock/mockServer.js')
 // }
+
+//引入ant-design-vue
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
+
 const app =createApp(App)
+
+app.use(Antd) 
 // 确保 t_use_  实例来创建VueRouter, 将路由插件安装到 app 中
 app.use(VueRouter)
 app.use(store)

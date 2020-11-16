@@ -8,6 +8,7 @@
     "lint": "lint-staged ."
   },
   "dependencies": {
+    "ant-design-vue": "^2.0.0-rc.1",
     "axios": "^0.21.0",
     "echarts": "^4.9.0",
     "echarts-for-vue": "^1.0.1",
