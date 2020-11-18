@@ -12,9 +12,11 @@
     <a-layout id="components-layout-demo-top-side-2">
         <Header />
         <a-layout>
-            <Sidebar />
+            <Sidebar @funceven="getson" />
+            <!-- <Sidebar  /> -->
             <a-layout style="padding: 0 24px 24px">
-                <Home />
+                <Home title1="父传子" title2="父传子2" />
+                <!-- <Home  /> -->
             </a-layout>
         </a-layout>
     </a-layout>
@@ -43,10 +45,16 @@ import {
 import Header from "./common/Header.vue";
 import Sidebar from "./common/Sidebar.vue";
 import Home from "./common/Home.vue";
+// import { provide } from "@vue/composition-api";  // 父组件引入 provide
 export default {
     name: "layout",
     props: {
         msg: String,
+    },
+    data() {
+        return {
+            msgFormSon: "子传父成功在侧边栏",
+        }
     },
     components: {
         Header,
@@ -57,8 +65,15 @@ export default {
         NotificationOutlined,
         // MailOutlined,
     },
-    data() {
-   
+    methods: {
+        getson(data) {
+            this.msgFormSon = data;
+            console.log(this.msgFormSon);
+        },
     },
+    // setup() {
+    //     // provide('数据名称', 要传递的数据)
+    //     provide("customVal", "我是父组件向子组件传递的值");
+    // },
 };
 </script>

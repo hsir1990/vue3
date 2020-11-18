@@ -1,18 +1,14 @@
 <template>
     <!-- <div id="home"> -->
 
-    <!-- <router-view v-slot="{ Component }">
-    <keep-alive>
-        <component :is="Component" />
-    </keep-alive>
-  </router-view> -->
-
     <!-- <div v-for="n in 100" @click="JBtn">home</div> -->
 
     <a-breadcrumb style="margin: 16px 0">
-        <a-breadcrumb-item>Home</a-breadcrumb-item>
+        <a-breadcrumb-item>Layout</a-breadcrumb-item>
         <a-breadcrumb-item>List</a-breadcrumb-item>
         <a-breadcrumb-item>App</a-breadcrumb-item>
+        <a-breadcrumb-item>{{ title1 }}</a-breadcrumb-item>
+        <a-breadcrumb-item>{{ title2 }}</a-breadcrumb-item>
     </a-breadcrumb>
     <a-layout-content
         :style="{
@@ -22,11 +18,11 @@
             minHeight: '280px',
         }"
     >
-        <transition name="move" mode="out-in">
+        <router-view v-slot="{ Component }">
             <keep-alive>
-                <router-view></router-view>
+                <component :is="Component" />
             </keep-alive>
-        </transition>
+        </router-view>
     </a-layout-content>
 
     <!-- </div> -->
@@ -54,14 +50,15 @@ export default {
     //     props: {
     //         msg: String,s
     //     },
+    props: ['title1','title2'],
     components: {
         Echartpage,
         Mock,
         Vuex,
     },
-    data() {
-        return {};
-    },
+    // data() {
+    //     return {};
+    // },
     //     methods:{
     // JBtn(){
     //     this.$router.push('/layout/btn2')

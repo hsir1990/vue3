@@ -19,17 +19,35 @@ export default {
     props: {
         msg: String,
     },
-    data() {
+    // data() {
         
-    },
+    // },
     //  mounted() {
     //   this.Jlayout()
     // },
     methods: {
         async Jlayout(){
             // this.$router.push('/login')
-            await this.$router.push('/layout')
+            // await this.$router.push('/layout')
+            if (this.$route.query.redirect) {
+                await this.$router.push({ path: this.$route.query.redirect });
+            // 如不存在，直接跳转到首页
+            } else {
+                // this.$router.push({ path: "/404" });
+                await this.$router.push({ path: "/layout/echart" });
+            }
+
         }
+    //     //登录成功后存储用户信息
+    //   localStorage.setItem("userName", this.name);
+    //   localStorage.setItem("passWord", this.password);
+    //   // 接收参数，如果存在redirect参数，登录后重定向到指定页面
+    //   if (this.$route.query.redirect) {
+    //     this.$router.push({ path: this.$route.query.redirect });
+    //   // 如不存在，直接跳转到首页
+    //   } else {
+    //     this.$router.push({ path: "/home" });
+    //   }
     }
 
 };

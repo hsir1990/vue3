@@ -1,5 +1,5 @@
 <template>
-    <div id="uvex">uvex
+    <div id="uvex1">uvex1
     <!--不清楚为啥放在句首就不能使用-->
     <!-- {{ this.$store.state.count }} -->
     {{ countss }}
@@ -13,7 +13,7 @@
 </template>
 
 <style lang="less" scoped>
-#uvex{
+#uvex1{
     font-size: 30px;
     color: #bbb;
 }
@@ -21,7 +21,7 @@
 <script>
 import {mapState, mapGetters, mapActions} from "vuex"
 export default {
-    name: "header",
+    name: "vuex1",
     props: {
         msg: String,
     },
