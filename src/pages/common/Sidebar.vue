@@ -23,7 +23,7 @@
                 </template>
                 <!-- <a-menu-item key="5">{{ customVal }}</a-menu-item> -->
                 <a-menu-item key="6" v-on:click="$emit('funceven', msgZ)">子传父</a-menu-item>
-                <a-menu-item key="7">option7</a-menu-item>
+                <a-menu-item key="7" @click="Jloading">写个loading</a-menu-item>
                 <a-menu-item key="8">option8</a-menu-item>
             </a-sub-menu>
             <a-sub-menu key="sub3">
@@ -71,6 +71,9 @@ export default {
         },
         Jvuex() {
             this.$router.push("/layout/vuex");
+        },
+        Jloading() {
+            this.$router.push("/layout/loading");
         },
         ZCF() {
             //func: 是父组件指定的传数据绑定的函数，this.msg:子组件给父组件传递的数据

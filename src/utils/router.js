@@ -7,6 +7,7 @@ var subPath = {
     1: '/layout/echart',
     2: '/layout/mock',
     3: '/layout/vuex',
+    7: '/layout/loading',
 }
 export const constantRoutes = [
 
@@ -36,7 +37,8 @@ export const constantRoutes = [
         children: [
             { path: subPath['1'], component: () => import('/@/pages/views/Echartpage.vue') },
             { path: subPath['2'], component: () => import('/@/pages/views/Mock.vue') },
-            { path: subPath['3'], component: () => import('/@/pages/views/Vuex.vue') }
+            { path: subPath['3'], component: () => import('/@/pages/views/Vuex.vue') },
+            { path: subPath['7'], component: () => import('/@/pages/views/Loading.vue') }
         ]
 
     },
@@ -232,7 +234,6 @@ router.beforeEach((to, from, next) => {
             // replace: true,
         })
         localStorage.token = true
-        
     } else {
         window.localStorage.setItem('token',true)
         localStorage.token = true

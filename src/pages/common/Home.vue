@@ -24,7 +24,13 @@
             </keep-alive>
         </router-view>
     </a-layout-content>
-
+<!-- <router-view v-slot="{ Component }">
+            <keep-alive>
+                <transition mode="out-in" name="fade-transform">
+                <component :is="Component" />
+                </transition>
+            </keep-alive>
+        </router-view> -->
     <!-- </div> -->
 </template>
 
@@ -45,6 +51,7 @@
 import Echartpage from "../views/Echartpage.vue";
 import Mock from "../views/Mock.vue";
 import Vuex from "../views/Vuex.vue";
+import Loading from "../views/Loading.vue";
 export default {
     //     name: "home",
     //     props: {
@@ -55,6 +62,7 @@ export default {
         Echartpage,
         Mock,
         Vuex,
+        Loading
     },
     // data() {
     //     return {};
