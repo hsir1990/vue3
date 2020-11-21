@@ -5,7 +5,7 @@ const envFiles = [
   /** default file */ `.env`,
   /** mode file */ `.env.${process.env.NODE_ENV}`
 ]
-console.log('process.env[k]--' + process.env.NODE_ENV)//可判断是否为开发环境
+console.log('process.env[k]----' + process.env.NODE_ENV)//可判断是否为开发环境
 for (const file of envFiles) {
     const envConfig = dotenv.parse(fs.readFileSync(file))
     for (const k in envConfig) {
