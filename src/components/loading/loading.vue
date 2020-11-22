@@ -5,11 +5,15 @@
       <div class="animate">
       </div>
       <div class="text">{{text}}</div>
+      <div class="text">{{i18n}}</div>
+      <div class="text">{{getI18n}}</div>
     </div>
   </div>
 </template>
 
 <script>
+import { inject } from 'vue'
+
 export default {
   props: {
     show: Boolean,
@@ -17,7 +21,22 @@ export default {
       type: String,
       default: '正在加载中...'
     },
-  }
+    // i18n:'',
+    // getI18n
+  },
+  //inject: ['i18n'],
+//   setup() {
+//     // const getI18n = inject('i18n');
+//     // return{
+//     //   getI18n
+
+//     // }
+    
+//   },
+//   created() {
+//  this.getI18n = inject('i18n');
+    
+//   }
 }
 </script>
 <style lang="less" scoped>

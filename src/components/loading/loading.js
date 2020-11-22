@@ -31,19 +31,38 @@ export default {
             
 
         }
-        // debugger
+// debugger
+$vm.show = true;
+let loading = reactive({
+    show(text) {
         $vm.show = true;
 
-        let loading = {
-            show(text) {
-                $vm.show = true;
+        $vm.text = text;
+    },
+    hide() {
+        $vm.show = false;
+    }
+});
 
-                $vm.text = text;
-            },
-            hide() {
-                $vm.show = false;
-            }
-        };
+// app.provide('i18n',  '11111')
+
+// const state = reactive({
+//     show: true,        // DOM元素是否显示
+//     text: ''    // 提示文本
+// });
+
+        // $vm.show = true;
+
+        // let loading = {
+        //     show(text) {
+        //         $vm.show = true;
+
+        //         $vm.text = text;
+        //     },
+        //     hide() {
+        //         $vm.show = false;
+        //     }
+        // };
 
         if (!app.$loading) {
             app.$loading = loading;

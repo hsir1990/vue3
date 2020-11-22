@@ -25,6 +25,7 @@ export default {
     methods: {},
     created() {
         this.$loading.show('111')
+        // debugger
     },
 };
 </script>
