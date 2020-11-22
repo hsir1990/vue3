@@ -24,7 +24,7 @@ export default {
     },
     methods: {},
     created() {
-        this.$loading.show('')
+        this.$loading.show('111')
     },
 };
 </script>

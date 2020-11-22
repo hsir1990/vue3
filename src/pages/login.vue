@@ -2,7 +2,7 @@
     <div id="login">login</div>
     <input type="text" placeholder="输入账号"><br/>
     <input type="password" placeholder="输入密码"><br/>
-    <input type="submit" value="提交" @click="Jlayout">
+    <input type="submit" value="提交" @click="Jlayout" />
 </template>
 
 <style lang="less" scoped>

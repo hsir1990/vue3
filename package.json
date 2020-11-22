@@ -2,7 +2,7 @@
   "name": "vue3",
   "version": "0.0.0",
   "scripts": {
-    "dev": "cross-env NODE_ENV=production vite",
+    "dev": "cross-env NODE_ENV=development vite",
     "build-dev": "set NODE_ENV=development&& vite build",
     "build-prd": "set NODE_ENV=production&& vite build",
     "lint": "lint-staged ."

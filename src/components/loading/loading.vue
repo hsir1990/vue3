@@ -20,3 +20,11 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+#loading-box{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99
+}
+</style>
